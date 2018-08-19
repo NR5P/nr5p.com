@@ -1,7 +1,7 @@
 $primary-color: #444;
 $secondary-color: #eece1a;
 $show-home-image: true;
-$home-image: url(../img/operating-position.jpg);
+$home-image: url(../img/workbench.jpg);
 $background-opacity: 0.9;
 
 @mixin easeOut {
@@ -15,6 +15,7 @@ $background-opacity: 0.9;
 			background: $home-image;
 			background-attachment: fixed;
 			background-size: cover;
+			background-position: 100% 35%;
 
 			&:after {
 				content:"";
@@ -28,6 +29,15 @@ $background-opacity: 0.9;
 			}
 		}
 	}	
+}
+
+//set text color
+@function set-text-color($color) {
+	@if (lightness($color) > 40) {
+		@return #000;
+	} @else {
+		@return #fff;
+	}
 }
 
 // media query mixins
